@@ -1,0 +1,41 @@
+import tkinter as tk
+import random
+
+# Function to determine the winner of the game
+def play_game(player_choice):
+    # Map player choice to its corresponding index
+    choices = ['rock', 'paper', 'scissors']
+    player_index = choices.index(player_choice)
+
+    # Generate computer choice randomly
+    computer_index = random.randint(0, 2)
+
+    # Determine the winner based on the game rules
+    if player_index == computer_index:
+        result = "Tie!"
+    elif (player_index == 0 and computer_index == 1) or (player_index == 1 and computer_index == 2) or (player_index == 2 and computer_index == 0):
+        result = "Computer wins!"
+    else:
+        result = "Player wins!"
+
+    # Display the result on the label
+    result_label.config(text=result)
+
+# Create the main window
+window = tk.Tk()
+window.title("Rock Paper Scissors Game")
+
+# Create the widgets
+rock_button = tk.Button(window, text="Rock", command=lambda: play_game("rock"))
+paper_button = tk.Button(window, text="Paper", command=lambda: play_game("paper"))
+scissors_button = tk.Button(window, text="Scissors", command=lambda: play_game("scissors"))
+result_label = tk.Label(window, text="Choose your move!")
+
+# Add the widgets to the window
+rock_button.pack(side="left", padx=10, pady=10)
+paper_button.pack(side="left", padx=10, pady=10)
+scissors_button.pack(side="left", padx=10, pady=10)
+result_label.pack(side="bottom", pady=20)
+
+# Start the main loop
+window.mainloop()
