@@ -1,30 +1,35 @@
 import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.patches import Patch
 
-# Define data
-categories = ['In-Stock', 'Out-of-Stock', 'Max-Purchase', 'Min-Purchase']
-items_count = [25, 50, 30, 14]  # Example counts of in-stock and out-of-stock items and min/max purchase
+# Work experience data
+companies = ['U.S Armed Forces', 'Cool Air', 'Bentley Builders', 'Hawthorne Residential Partners']
+years_of_experience = [5, 3, 3, 2]
+colors = ['green','gray', 'yellow', 'lightblue']
+positions = ['Logistician','HVAC Installer','Lead HVAC Technician','Lead Residential Technician']
 
-# Create a bar plot
-fig, ax = plt.subplots()
-ax.bar(categories, items_count, color=['green', 'red', 'blue', 'black'])
+# Create a figure and axis objects
+fig, ax = plt.subplots(figsize=(8,6))
+#setting the color for the background
+ax.set_facecolor('lightgray')
 
-# Add labels and title
-ax.set_xlabel('Item Availability')
-ax.set_ylabel('Number of Items')
-ax.set_title('Premier Quality X Sales Tracker')
 
-# Add legends
-legend1 = ax.legend(['In-Stock'], loc='upper left')
-legend2 = ax.legend(['Out-of-Stock'], loc='upper right')
-legend3 = ax.legend(['Max-Purchase'], loc='lower left')
-legend4 = ax.legend(['Min-Purchase'], loc='lower right')
 
-# Add all legends to the plot
-ax.add_artist(legend1)
-ax.add_artist(legend2)
-ax.add_artist(legend3)
-ax.add_artist(legend4)
+# Plot the horizontal bars
+y_pos = np.arange(len(companies))
+ax.barh(y_pos, years_of_experience, color=colors)
 
-# Show the plot
+
+
+# Customize the graph
+plt.title('Work Experience')
+plt.xlabel('Years')
+plt.ylabel('Company')
+plt.yticks(y_pos, companies)
+
+# Create custom legend with color-coded balls
+legend_elements = [Patch(facecolor=color, edgecolor='black') for color in colors]
+plt.legend(legend_elements, positions, loc='upper right')
+
+# Display the graph
 plt.show()
-
