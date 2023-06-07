@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Page</title>
+  <style>
+    .container {
+      display: flex;
+    }
+
+    .nav-container {
+      flex-basis: 25%;
+      padding: 20px;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 20px;
+    }
+
+    nav ul {
+      list-style-type: circle;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+
+    h3 {
+      background: black;
+      color: white;
+      padding: 10px;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav-container">
+      <h1 class="header">
+        <span>Technical</span>
+        <span>Documentation</span>
+      </h1>
+      <nav>
+        <ul type="circle">
+          <li><a href="#Introduction">Introduction</a></li>
+          <li><a href="#Prerequisites">Prerequisites</a></li>
+          <li><a href="#About">About the topic</a></li>
+          <li><a href="#Topic One">Topic One</a></li>
+          <li><a href="#Topic Two">Topic Two</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="content">
+      <section id="Introduction">
+        <h3>Introduction</h3>
+        <p>Some content about the main topic, for example JavaScript documentation intro about the language</p>
+      </section>
+      <section id="Prerequisites">
+        <h3>Prerequisites</h3>
+        <p>Background information before getting into the topic</p>
+        <ul>
+          <li>Some list content</li>
+          <li>What you should already know</li>
+          <li>Workings and assumptions</li>
+        </ul>
+        <p>Any other content to be covered before learning this topic</p>
+          
+      </section>
+      <section id="About">
+        <h3>About the topic</h3>
+        <p>More info about the topic. For example, how the basic features work, etc..</p>
+        <p>Technical documentation should be thorough and to the point</p>
+        <p>Write about features and comparisons with other languages etc</p>
+      </section>
+      <section id="Topic One">
+        <h3>Topic One</h3>
+        <p>Getting started with the actual documentation content var greeting = 'Hello Radness' ;</p>
+      </section>
+      <section id="Topic Two">
+        <h3>Topic Two</h3>
+        <p>Another awesome topic about the main topic, for example, this could be variables or data types in JavaScript.</p>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
